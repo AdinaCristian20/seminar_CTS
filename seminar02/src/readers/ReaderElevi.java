@@ -9,9 +9,16 @@ import java.util.Scanner;
 import clase.Aplicant;
 import clase.Elev;
 
-public class ReaderElevi {
-	public static List<Aplicant> readPupil(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+public class ReaderElevi extends ReaderAplicanti{
+
+	public ReaderElevi(String fileName) {
+		super(fileName);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<Aplicant> readAplicant() throws FileNotFoundException {
+		Scanner input2 = new Scanner(new File(super.fileName));
 		input2.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 

@@ -9,9 +9,16 @@ import java.util.Scanner;
 import clase.Angajat;
 import clase.Aplicant;
 
-public class ReaderAngajati {
-	public static List<Aplicant> readAngajati(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+public class ReaderAngajati extends ReaderAplicanti{
+	
+	public ReaderAngajati(String fileName) {
+		super(fileName);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<Aplicant> readAplicant() throws FileNotFoundException {
+		Scanner input2 = new Scanner(new File(super.fileName));
 		input2.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
