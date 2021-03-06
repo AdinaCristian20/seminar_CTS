@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import clase.Angajat;
-import clase.Utils;
+import readers.ReaderAngajati;
 
 public class Program {
 
@@ -12,7 +12,7 @@ public class Program {
 		// TODO Auto-generated method stub
 		List<Angajat> listaAngajati;
 		try {
-			listaAngajati = Utils.readAngajati("angajati.txt");
+			listaAngajati = ReaderAngajati.readAngajati("angajati.txt");
 			for(Angajat angajat:listaAngajati)
 				System.out.println(angajat.toString());
 		} catch (FileNotFoundException e) {
