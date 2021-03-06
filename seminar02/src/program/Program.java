@@ -3,18 +3,19 @@ package program;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-import clase.Angajat;
-import readers.ReaderAngajati;
+import clase.Aplicant;
+import readers.ReaderElevi;
 
 public class Program {
-
+	
+	//public static List<Aplicant> citesteAplicanti()
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<Angajat> listaAngajati;
+		List<Aplicant> listaAplicanti;
 		try {
-			listaAngajati = ReaderAngajati.readAngajati("angajati.txt");
-			for(Angajat angajat:listaAngajati)
-				System.out.println(angajat.toString());
+			listaAplicanti = ReaderElevi.readPupil("elevi.txt");
+			for(Aplicant aplicant:listaAplicanti)
+				System.out.println(aplicant.toString());
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
