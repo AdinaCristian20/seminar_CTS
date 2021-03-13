@@ -29,19 +29,23 @@ public class Angajat extends Aplicant{
 		
 	}
 	
-	
-	@Override
-	public String toString() {
-		return "Angajat: Nume=" + nume + ", Prenume=" + prenume
-				+ ", Varsta=" + varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nr_proiecte + ", DenumireProiect="
-				+ Arrays.toString(denumireProiect) + "Ocupatie=" + ocupatie + ", salariu=" + salariu;
-	}
+
 
 	@Override
 	public void afisareSumaFinantare() {
 		// TODO Auto-generated method stub
 		System.out.println(super.compunereStringPentruSumaFinantare(this.sumaFinantata, "Angajat"));
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder("Angajat: ");
+		builder.append(super.toString())
+		.append("ocupatie= ").append(this.ocupatie)
+		.append(", salariu=").append(salariu);
+		return builder.toString();
+	}
+	
+	
 	
 	
 }

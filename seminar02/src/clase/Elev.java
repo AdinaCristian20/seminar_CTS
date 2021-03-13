@@ -22,9 +22,11 @@ public class Elev extends Aplicant{
 	
 	@Override
 	public String toString() {
-		return "Elev: Nume=" + nume + ", Prenume=" + prenume + ", Varsta="
-				+ varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nr_proiecte  + ", DenumireProiect="
-				+ Arrays.toString(denumireProiect) + "Clasa=" + clasa + ", Tutore=" + tutore;
+		StringBuilder builder = new StringBuilder("Elev: ");
+		builder.append(super.toString())
+		.append("Clasa= ").append(this.clasa)
+		.append(", Tutore=").append(tutore);
+		return builder.toString();
 	}
 	
 	public Elev() {
