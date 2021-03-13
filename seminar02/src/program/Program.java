@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import clase.Aplicant;
+import clase.Proiect;
 import readers.ReaderAngajati;
 import readers.ReaderAplicanti;
 import readers.ReaderElevi;
@@ -16,9 +17,11 @@ public class Program {
 	}
 	
 	public static void afiseazaAplicanti(List<Aplicant> listaAplicanti) {
+		Proiect proiect=new Proiect(81);
 		for(Aplicant aplicant:listaAplicanti) {
 			System.out.println(aplicant.toString());
 			aplicant.afisareSumaFinantare();
+		aplicant.afisareStatusProiect(proiect);
 		}
 	}
 	

@@ -1,5 +1,7 @@
 package clase;
 
+import java.util.Arrays;
+
 public abstract class Aplicant{
 	protected String nume;
 	protected String prenume;
@@ -27,12 +29,13 @@ public abstract class Aplicant{
 	public void setVarsta(int varsta) {
 		this.varsta = varsta;
 	}
-	public void statut(){
-		if(punctaj>80)
-			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
-		else
-			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
-		}
+	public void afisareStatusProiect(Proiect proiect){
+		StringBuilder stringBuilder=new StringBuilder();
+		stringBuilder.append("Aplicantul ").append(this.nume).append(" ").append(this.prenume);
+		stringBuilder.append(punctaj>proiect.getPragAcceptare() ? " a fost acceptat" : " nu a fost acceptat");
+		System.out.println(stringBuilder.toString());
+	}
+	
 	public int getPunctaj() {
 		return punctaj;
 	}
@@ -40,8 +43,6 @@ public abstract class Aplicant{
 		this.punctaj = punctaj;
 	}
 	
-	
-
 	
 	public Aplicant() {
 		super();
@@ -58,12 +59,17 @@ public abstract class Aplicant{
 	}
 	public int getNr_proiecte() {
 		return nr_proiecte;
+	}	
+	public String[] getDenumiriProiecte() {
+		return denumireProiect;
 	}
-	public void setNr_proiecte(int nr_proiecte) {
-		this.nr_proiecte = nr_proiecte;
+	public void setDenumiriProiecte(String[] denumireProiect,int nrProiecte) {
+		this.denumireProiect = denumireProiect;
+		this.nr_proiecte=nrProiecte;
 	}
 	
 	public abstract void afisareSumaFinantare();
+	
 	public String compunereStringPentruSumaFinantare(int suma, String tipAplicant) {
 		StringBuilder stringBuilder=new StringBuilder();
 		stringBuilder.append(tipAplicant).append(" ");
@@ -75,5 +81,15 @@ public abstract class Aplicant{
 		stringBuilder.append( " Euro/zi in proiect.");
 		return stringBuilder.toString();
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Aplicant [nume=").append(nume).append(", prenume=").append(prenume).append(", varsta=")
+				.append(varsta).append(", punctaj=").append(punctaj).append(", nr_proiecte=").append(nr_proiecte)
+				.append(", denumireProiect=").append(Arrays.toString(denumireProiect)).append("]");
+		return builder.toString();
+	}
+	
+	
 }
 
