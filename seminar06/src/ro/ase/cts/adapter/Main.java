@@ -16,6 +16,9 @@ public class Main {
 		
 		BiletAdapter biletAdapter=new BiletAdapter(30);
 		rezervaSiVindeBiletePePlatforma(biletAdapter);
+		
+		BiletOnline biletOnline=new BiletAdapterObiecte(bilet);
+		rezervaSiVindeBiletePePlatforma(biletOnline);
 	}
 
 }
