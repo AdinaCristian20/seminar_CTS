@@ -1,7 +1,7 @@
 package ro.ase.cts.state2.program;
 
 import ro.ase.cts.state2.Masa;
-import ro.ase.cts.state2.StareLibera;
+
 
 public class Main {
 
