@@ -96,4 +96,16 @@ public class StudentTests {
 			fail("Metoda nu arunca IndexOutOfBoundsException ci alt tip de exceptie");
 		}
 	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testNoteNegative() {
+		Student student=new Student();
+		student.adaugaNota(-4);	
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testNotePreaMari() {
+		Student student=new Student();
+		student.adaugaNota(200);	
+	}
 }
